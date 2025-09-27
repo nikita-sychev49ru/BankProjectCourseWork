@@ -1,7 +1,5 @@
-
-//Пример валюты и акции для отображения на веб-страницах:
-
 {
   "user_currencies": ["USD", "EUR"],
+  "user_main_currency": "RUB",
   "user_stocks": ["AAPL", "AMZN", "GOOGL", "MSFT", "TSLA"]
 }

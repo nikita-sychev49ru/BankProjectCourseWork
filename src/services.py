@@ -2,7 +2,6 @@ import json
 import logging
 import os
 import re
-from typing import Optional
 
 from src.utils import make_transactions
 
@@ -58,5 +57,6 @@ def search_by_phones(transactions: list) -> str:
     else:
         services_logger.warning("поиск не дал результатов")
         return json.dumps({"Результаты поиска": "Ничего не нашлось"}, ensure_ascii=False)
+
 
 print(search_by_phones(make_transactions()))

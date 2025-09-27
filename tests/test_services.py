@@ -32,9 +32,7 @@ from src.services import search_by_phones, search_by_target
 )
 def test_search_by_target(transactions: list, expected: list) -> None:
     """тесты для поиска под ключевому слову"""
-    with (
-        patch("src.services.make_transactions", return_value=transactions),
-    ):
+    with (patch("src.services.make_transactions", return_value=transactions),):
         result = json.loads(search_by_target(transactions, "Колхоз"))
         assert result == expected
 

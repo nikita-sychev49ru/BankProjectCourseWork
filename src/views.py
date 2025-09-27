@@ -76,8 +76,8 @@ def main_views() -> str:
             # если данные за период получены, производим обработку
             act_date = correct_act_date.strftime("%d.%m.%Y")
             transactions = filter_by_currency_month(transactions, act_date)
-            data["cards"] = get_card_info(filtered_by_card_number(transactions))   # list
-            data["top_transactions"] = get_top_transactions(transactions)   #dict
+            data["cards"] = get_card_info(filtered_by_card_number(transactions))  # list
+            data["top_transactions"] = get_top_transactions(transactions)  # dict
     # независимо от распакованных данных о транзакциях запрашиваем информацию о валюте и акциях
     views_logger.info("запрос пользовательских настроек по отображению курсов валют и котировок")
     dir_path = os.path.dirname(os.path.abspath(__file__))
@@ -87,8 +87,8 @@ def main_views() -> str:
         currency_op = settings["user_currencies"]
         currency_main = settings["user_main_currency"]
         stocks = settings["user_stocks"]
-        data["currency_rates"] = get_exchange_rate(currency_op, currency_main)    #list
-        data["stock_prices"] = get_stocks_rates(stocks)    #list
+        data["currency_rates"] = get_exchange_rate(currency_op, currency_main)  # list
+        data["stock_prices"] = get_stocks_rates(stocks)  # list
     views_logger.info("формирование ответа на запрос")
     json_response = json.dumps(data, ensure_ascii=False)
     views_logger.info("Ответ сформирован")
